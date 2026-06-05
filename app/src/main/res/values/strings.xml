@@ -1,0 +1,62 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="Spelling">
+    <string name="app_name">Localiza</string>
+    <string name="welcome_text">Faça sua rota de maneira mais rápida e organizada</string>
+    <string name="google_login">Entrar com o google</string>
+
+    <!-- Google Sign-In -->
+    <string name="default_web_client_id">
+        627185689593-hq3scl0i9gttkeb30po67nbte7t582dr.apps.googleusercontent.com</string>
+
+    <!-- Add Address Screen -->
+    <string name="voltar">Voltar</string>
+    <string name="cadastrar_um_endereco">Cadastrar um endereço</string>
+    <string name="cep">CEP</string>
+    <string name="rua">Rua</string>
+    <string name="bairro">Bairro</string>
+    <string name="cidade">Cidade</string>
+    <string name="estado">Estado</string>
+    <string name="cadastrar">Cadastrar</string>
+
+    <!-- Address List Screen -->
+    <string name="enderecos_cadastrados">Endereços Cadastrados</string>
+    <string name="adicionar_endereco">Adicionar Endereço</string>
+    <string name="buscar">Buscar</string>
+    <string name="organizar_rotas">Organizar rotas</string>
+    <string name="iniciar_entregas">Iniciar entregas</string>
+    
+    <!-- Address Item Labels -->
+    <string name="bairro_label">Bairro: </string>
+    <string name="rua_label">Rua: </string>
+    <string name="cidade_label">Cidade: </string>
+    <string name="estado_label">Estado: </string>
+    <string name="cidade_estado_label">Cidade: %1$s Estado: %2$s</string>
+
+    <!-- Address Detail Screen -->
+    <string name="ola_nome_bem_vindo">Olá, %1$s\nSeja bem-vindo(a)</string>
+    <string name="esse_endereco_corresponde">Esse Endereço corresponde ao:</string>
+    <string name="locais_cadastrados_nesse_endereco">Locais cadastrados nesse endereço</string>
+    <string name="cadastrar_um_local">Cadastrar um local</string>
+    <string name="ilustracao_endereco">Ilustração do endereço</string>
+    <string name="foto_de_perfil">Foto de perfil</string>
+
+    <!-- Register Place Screen -->
+    <string name="cadastrar_um_local_nesse_endereco">Cadastrar um local nesse endereço</string>
+    <string name="local">Local</string>
+    <string name="digite_o_nome_do_seu_local">Digite o nome do seu local</string>
+    <string name="tipo">Tipo</string>
+    <string name="digite_o_tipo_do_seu_local">Digite o tipo do seu local</string>
+
+    <!-- Share Location Screen -->
+    <string name="compartilhe_sua_localizacao">Compartilhe sua localização</string>
+    <string name="sua_localizacao_atual">Sua localização atual</string>
+    <string name="endereco_completo_format">%1$s\n%2$s- %3$s\nBrasil</string>
+    <string name="maps">Maps</string>
+    <string name="rota">Rota</string>
+    <string name="compartilhar">Compartilhar</string>
+    <string name="icone_localizacao">Ícone de localização</string>
+    <string name="icone_compartilhar">Ícone de compartilhar</string>
+
+    <!-- Item Place Labels -->
+    <string name="nome_place_label">Nome: %1$s</string>
+    <string name="tipo_place_label">Tipo: %1$s</string>
+</resources>
