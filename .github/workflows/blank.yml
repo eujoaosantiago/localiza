@@ -22,5 +22,11 @@ jobs:
           chmod +x gradlew
           sed -i 's/\r$//' gradlew
 
-      - name: Compilar e Criar o APK com Detalhes do Erro
-        run: ./gradlew assembleDebug --stacktrace --no-daemon
+      - name: Tentar compilar salvando o erro em arquivo
+        run: ./gradlew assembleDebug --no-daemon > erro_compilacao.txt 2>&1 || true
+
+      - name: Disponibilizar Relatório de Erro para Download
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-de-erro
+          path: erro_compilacao.txt
