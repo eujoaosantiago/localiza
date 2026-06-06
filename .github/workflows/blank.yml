@@ -22,11 +22,15 @@ jobs:
           chmod +x gradlew
           sed -i 's/\r$//' gradlew
 
-      - name: Tentar compilar salvando o erro em arquivo
-        run: ./gradlew assembleDebug --no-daemon > erro_compilacao.txt 2>&1 || true
+      - name: Criar google-services.json falso (Mock)
+        run: |
+          echo '{"project_info":{"project_number":"123","project_id":"mock-id","storage_bucket":"mock.appspot.com"},"client":[{"client_info":{"mobilesdk_app_id":"1:123:android:123","android_client_info":{"package_name":"com.example.mock"}},"api_key":[{"current_key":"mock-key"}],"services":{}}],"configuration_version":"1"}' > app/google-services.json
 
-      - name: Disponibilizar Relatório de Erro para Download
+      - name: Compilar e Criar o APK Debug
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Disponibilizar o APK para Download
         uses: actions/upload-artifact@v4
         with:
-          name: relatorio-de-erro
-          path: erro_compilacao.txt
+          name: meu-app-kotlin
+          path: app/build/outputs/apk/debug/app-debug.apk
