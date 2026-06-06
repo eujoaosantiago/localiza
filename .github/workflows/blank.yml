@@ -22,15 +22,15 @@ jobs:
           chmod +x gradlew
           sed -i 's/\r$//' gradlew
 
-      - name: Criar google-services.json falso
+      - name: Criar google-services.json com o Package Name correto
         run: |
-          echo '{"project_info":{"project_number":"123","project_id":"mock-id","storage_bucket":"mock.appspot.com"},"client":[{"client_info":{"mobilesdk_app_id":"1:123:android:123","android_client_info":{"package_name":"com.example.mock"}},"api_key":[{"current_key":"mock-key"}],"services":{}}],"configuration_version":"1"}' > app/google-services.json
+          echo '{"project_info":{"project_number":"123456789","project_id":"localiza-unifor","storage_bucket":"localiza-unifor.appspot.com"},"client":[{"client_info":{"mobilesdk_app_id":"1:123456789:android:abcdef","android_client_info":{"package_name":"com.localiza.uniforadsv2"}},"api_key":[{"current_key":"mock-key-aBcDeF"}],"services":{}}],"configuration_version":"1"}' > app/google-services.json
 
-      - name: Tentar compilar salvando o erro em arquivo
-        run: ./gradlew assembleDebug --no-daemon > erro_novo.txt 2>&1 || true
+      - name: Compilar e Criar o APK de Verdade
+        run: ./gradlew assembleDebug --no-daemon
 
-      - name: Disponibilizar Relatório de Erro para Download
+      - name: Disponibilizar o APK para Download
         uses: actions/upload-artifact@v4
         with:
-          name: relatorio-de-erro-novo
-          path: erro_novo.txt
+          name: meu-app-localiza
+          path: app/build/outputs/apk/debug/app-debug.apk
