@@ -11,20 +11,16 @@ jobs:
       - name: Clonar o código do GitHub
         uses: actions/checkout@v4
 
-      - name: Configurar o Java (JDK 17)
+      - name: Configurar o Java (JDK 21)
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '17'
+          java-version: '21'
 
-      - name: Dar permissão para rodar o Gradle
-        run: chmod +x gradlew
+      - name: Validar e corrigir permissões do Gradle
+        run: |
+          chmod +x gradlew
+          sed -i 's/\r$//' gradlew
 
       - name: Compilar e Criar o APK Debug
-        run: ./gradlew assembleDebug
-
-      - name: Disponibilizar o APK para Download
-        uses: actions/upload-artifact@v4
-        with:
-          name: meu-app-kotlin
-          path: app/build/outputs/apk/debug/app-debug.apk
+        run: ./gradlew assembleDebug --no-daemon
